@@ -1,0 +1,62 @@
+[2019-10-04 15:14:56 -0400] [13547] [INFO] Starting gunicorn 19.9.0
+[2019-10-04 15:14:56 -0400] [13547] [INFO] Listening at: unix:/tmp/gunicorn.sock (13547)
+[2019-10-04 15:14:56 -0400] [13547] [INFO] Using worker: sync
+[2019-10-04 15:14:56 -0400] [13550] [INFO] Booting worker with pid: 13550
+[2019-10-04 15:14:56 -0400] [13551] [INFO] Booting worker with pid: 13551
+[2019-10-04 15:14:56 -0400] [13550] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+ModuleNotFoundError: No module named 'neuromorpho-project'
+[2019-10-04 15:14:56 -0400] [13550] [INFO] Worker exiting (pid: 13550)
+[2019-10-04 15:14:56 -0400] [13551] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+ModuleNotFoundError: No module named 'neuromorpho-project'
+[2019-10-04 15:14:56 -0400] [13551] [INFO] Worker exiting (pid: 13551)
+[2019-10-04 15:14:56 -0400] [13554] [INFO] Booting worker with pid: 13554
+[2019-10-04 15:14:56 -0400] [13554] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/var/www/venv/lib/python3.6/site-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+ModuleNotFoundError: No module named 'neuromorpho-project'
+[2019-10-04 15:14:56 -0400] [13554] [INFO] Worker exiting (pid: 13554)
+[2019-10-04 15:14:56 -0400] [13547] [INFO] Shutting down: Master
+[2019-10-04 15:14:56 -0400] [13547] [INFO] Reason: Worker failed to boot.

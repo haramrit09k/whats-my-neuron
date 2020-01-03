@@ -1,0 +1,12 @@
+{% extends 'neuromorpho_app/base.html' %}
+
+{% block 'body' %}
+
+<form action="delete" method="post">
+        {% csrf_token %}
+    <label for="neuron_id">Enter neuron ID for neuron to be deleted: </label>
+    <input id="neuron" type="text" name="neuron" value="{{ neuron_id }}">
+    <input type="submit" value="Delete">
+</form>
+
+{% endblock %}

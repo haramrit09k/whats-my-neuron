@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block 'body' %}
+    <center>
+    <!-- <h1>{{ view_name }}</h1> -->
+
+    {% for d in data %}
+
+        <hr style="height: 1px; background-color: black;">
+        <img src="{{ d.png_url }}" alt="{{ d.neuron_id }}">
+
+        <h3> Neuron name: {{ d.neuron_name }}</h3>
+        <h4> Neuron_ID: {{ d.neuron_id }} </h4>
+        <h4> Species: {{ d.species }} </h4>
+
+    {% endfor %}
+</center>
+{% endblock %}

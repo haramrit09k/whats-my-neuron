@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block 'body' %}
+
+<form id="delete-form" action="delete" method="post">
+        {% csrf_token %}
+    <label for="neuron_id">Enter neuron ID for neuron to be deleted: </label>
+    <input id="neuron" type="text" name="neuron" value="{{ neuron_id }}">
+    <input type="submit" value="Delete">
+</form>
+
+{% ifequal success 1 %}
+      <script> alert("Successfully deleted neuron_id {{ del_id }}"); </script>
+{% endifequal %}
+
+{% ifequal success -1 %}
+      <script> alert("Couldn't find neuron_id {{ del_id }}"); </script>
+{% endifequal %}
+
+
+{% endblock %}

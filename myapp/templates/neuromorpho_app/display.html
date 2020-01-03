@@ -1,0 +1,11 @@
+{% extends 'neuromorpho_app/base.html' %}
+
+{% block 'body' %}
+    <h1>Hello Dear Bob</h1>
+
+    {% for d in data %}
+        <h2>{{ d.neuron_name }}</h2>
+        <img src="{{ d.png_url }}" alt="{{ d.neuron_id }}">
+    {% endfor %}
+
+{% endblock %}

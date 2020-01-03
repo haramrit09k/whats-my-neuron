@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block 'body' %}
+<br />
+<center>
+<form action="fetch" method="post">
+
+	{% csrf_token %} 
+
+	<label for="query_param">Query parameter:</label> 
+	<select name="query_param">
+	  <option value="species">species</option>
+	  <option value="strain">strain</option>
+	  <option value="age_classification">age_classification</option>
+	  <option value="min_age">min_age</option>
+	  <option value="max_age">max_age</option>
+	  <option value="min_weight">min_weight</option>
+	  <option value="max_weight">max_weight</option>
+	</select>
+<br>
+<br>
+
+	<label for="query_val">Query Value:</label> 
+	<input id="query_val" type="text" name="query_val" value="{{ query_val }}" /> 
+<br>
+<br>
+
+	<label for="size">No of records:</label> 
+	<input id="size" type="text" name="size" value="{{ size }}" /> 
+<br>
+<br>
+
+	<label for="page">Page number:</label> 
+	<input id="page" type="text" name="page" value="{{ page }}" /> 
+<br>
+<br>
+
+	<label for="sort_param">Sort parameter:</label> 
+	<select name="sort_param">
+	  <option value="species">species</option>
+	  <option value="strain">strain</option>
+	  <option value="age_classification">age_classification</option>
+	  <option value="min_age">min_age</option>
+	  <option value="max_age">max_age</option>
+	  <option value="min_weight">min_weight</option>
+	  <option value="max_weight">max_weight</option>
+	  <option value="soma_surface">soma_surface</option>
+	  <option value="surface">surface</option>
+	  <option value="volume">volume</option>
+	  <option value="slicing_thickness">slicing_thickness</option>
+	</select>
+<br>
+<br>
+
+	<label for="order">Order of sort:</label> 
+	<select name="order">
+	  <option value="asc">Ascending</option>
+	  <option value="desc">Descending</option>
+	</select>
+<br>
+<br>
+
+	<input type="submit" value="Fetch new records" />
+
+
+</form>
+</center>
+
+{% ifequal success 1 %}
+      <script> alert("Fetched records using the following url:\n\n {{ fetch_url }}"); </script>
+{% endifequal %}
+
+{% ifequal success -1 %}
+      <script> alert("Couldn't find records matching these parameters"); </script>
+{% endifequal %}
+
+
+{% endblock %}
